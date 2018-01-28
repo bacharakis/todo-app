@@ -67,7 +67,7 @@ export const getAllTasks = () => dispatch => {
     })
 };
 
-export const postNewTask = (task) => dispatch => {
+export const postNewTask = (task, category) => dispatch => {
   // dispatch(addTask({title: task, metafields: [{value: false}], slug: formatSlug(task)}));
   axios.post(`https://api.cosmicjs.com/v1/${config.bucket.slug}/add-object`, {type_slug: "tasks", title: task, content: "New Task",
     metafields: [
@@ -76,6 +76,12 @@ export const postNewTask = (task) => dispatch => {
         key: "is_complete",
         value: false,
         type: "text"
+      },
+      {
+          title: "Category",
+          key: "catergory",
+          value: category,
+          type: "text"
       }
     ]})
     .then((response) => {
