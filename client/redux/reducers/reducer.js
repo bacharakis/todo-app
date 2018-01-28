@@ -104,6 +104,12 @@ export const putChangeStatus = (task, bool) => (dispatch) => {
         key: "is_complete",
         value: !bool,
         type: "text"
+      },
+      {
+          title: "Category",
+          key: "catergory",
+          value: task.metafields[1].value,
+          type: "text"
       }
     ]})
     .then((response) => {
