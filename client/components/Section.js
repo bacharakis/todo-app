@@ -11,14 +11,14 @@ class Section extends Component {
     return (
       <section id="one" className="wrapper style2 special flow">
         <header className="major">
-          <h2>Let's get some work done!</h2>
+          <h2>Lets get some work done!</h2>
         </header>
         {
           this.props.tasks && this.props.tasks.map((task) => {
             if (!task)
               return <div></div>
             return (
-              <Task key={task._id} Obj={task} isComplete={task.metafields[0].value} Name={task.title}/>
+              <Task key={task._id} Obj={task} isComplete={task.metafields[0].value} Name={task.title} Category={task.metafields[1].value}/>
             )
           })
         }

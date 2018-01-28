@@ -12,6 +12,7 @@ const Task = (props) => {
           <button type="button" onClick={() => props.deleteTask(props.Obj.slug)} className="btn">Delete</button>
         </div>
         <h3 style={{textDecoration: props.isComplete ? "line-through" : "none"}}>{props.Name}</h3>
+        <label>{props.Category}</label>
       </div>
     </div>
   );
